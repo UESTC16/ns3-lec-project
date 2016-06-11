@@ -47,7 +47,9 @@ main (int argc, char *argv[])
         printHello(num);
 	std::cout<<"hello commit"<<std::endl;
 
-	//Simulator::Stop(Seconds(5));
+	
+
+//Simulator::Stop(Seconds(5));
 	Simulator::Run ();
 	Simulator::Destroy ();
 }
