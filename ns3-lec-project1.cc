@@ -25,8 +25,8 @@ NS_LOG_COMPONENT_DEFINE ("HelloSimulator");
 static void printHello(std::string word) {
         
 
-	std::cout<<Simulator::Now()<<"  "<<word<<std::endl;
-	Simulator::Schedule(Seconds(2),&printHello,word);
+	std::cout<<Simulator::Now()<<" "<<word<<std::endl;
+	Simulator::Schedule(Seconds(1),&printHello,word);
 }
 // ./test arg0 arg1 arg2
 // argc=4
@@ -39,20 +39,15 @@ int
 main (int argc, char *argv[])
 {
 	CommandLine cmd;
-	std::string name;
-        std::string num;
+	std::string name,num;
 	cmd.AddValue ("name", "my name", name);
 	cmd.AddValue ("num", "my num", num);
 	cmd.Parse(argc,argv);
 	printHello(name);
         printHello(num);
-	std::cout<<"hello commit"<<std::endl;
+//	std::cout<<"hello 11commit"<<std::endl;
 
-	
-
-
-
-//Simulator::Stop(Seconds(5));
+       Simulator::Stop(Seconds(5));
 	Simulator::Run ();
 	Simulator::Destroy ();
 }
