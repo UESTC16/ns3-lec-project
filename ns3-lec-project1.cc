@@ -39,7 +39,8 @@ int
 main (int argc, char *argv[])
 {
 	CommandLine cmd;
-	std::string name,num;
+	std::string name;
+        std::string num;
 	cmd.AddValue ("name", "my name", name);
 	cmd.AddValue ("num", "my num", num);
 	cmd.Parse(argc,argv);
